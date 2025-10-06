@@ -33,7 +33,7 @@ graph TB
 
     %% External Services
     Auth0[Auth0\nIdentity Provider]
-    Email[Email Service]
+    Email[SendGrid Email Service]
 
     %% Client to Gateway
     AdminWeb --> Gateway
@@ -272,7 +272,7 @@ The platform includes these core services:
 
 - **svc-identity**: Authentication and authorization
 - **svc-platform**: Core business logic and data management
-- **svc-notifications**: Email notification service
+- **svc-notifications**: Email notification service (SendGrid)
 
 ## Future Services
 

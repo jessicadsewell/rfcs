@@ -34,7 +34,7 @@ The platform ships two applications: a web-based Admin portal for internal opera
 
 - **Frontend Framework**: React 18+
 - **Build Tool**: Vite
-- **State Management**: Redux Toolkit or similar
+- **State Management**: Redux Toolkit
 - **Styling**: Tailwind CSS
 - **Testing**: Vitest or Jest
 

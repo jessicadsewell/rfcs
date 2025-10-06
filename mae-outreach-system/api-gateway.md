@@ -40,7 +40,7 @@ flowchart TD
     Notifications[svc-notifications]
 
     %% External Services
-    Email[Email Service]
+    Email[SendGrid Email Service]
 
     %% Request Flow
     AdminWeb -->|1. Request with JWT| Gateway

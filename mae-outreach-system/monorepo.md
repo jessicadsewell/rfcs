@@ -14,7 +14,7 @@ insurance-outreach/
 ├── services/                          # Backend microservices (Nest)
 │   ├── svc-identity/                  # Authentication & authorization
 │   ├── svc-platform/                  # Members, specialists, calls, risk
-│   └── svc-notifications/             # Email notifications
+│   └── svc-notifications/             # Email notifications (SendGrid)
 ├── libs/                              # Shared libraries
 │   ├── shared/                        # Shared utilities and types
 │   ├── ui/                            # Shared UI components
