@@ -11,8 +11,6 @@ The platform uses a microservices architecture with two core services handling d
 graph TB
     %% Client Applications
     AdminWeb[Admin Web App]
-    MemberWeb[Member Web App]
-    Mobile[Mobile App]
 
     %% API Gateway
     Gateway[API Gateway]
@@ -36,12 +34,9 @@ graph TB
     %% External Services
     Auth0[Auth0\nIdentity Provider]
     Email[Email Service]
-    SMS[SMS Service]
 
     %% Client to Gateway
     AdminWeb --> Gateway
-    MemberWeb --> Gateway
-    Mobile --> Gateway
 
     %% Gateway to Services
     Gateway --> Identity
@@ -64,7 +59,6 @@ graph TB
 
     %% Queue to External Services
     NotifQueue --> Email
-    NotifQueue --> SMS
 
     %% Styling
     classDef clientApp fill:#e1f5fe,stroke:#01579b,stroke-width:2px
@@ -73,11 +67,11 @@ graph TB
     classDef queue fill:#fff3e0,stroke:#e65100,stroke-width:2px
     classDef external fill:#fce4ec,stroke:#880e4f,stroke-width:2px
 
-    class AdminWeb,MemberWeb,Mobile clientApp
+    class AdminWeb clientApp
     class Gateway,Identity,Platform service
     class IdentityDB,PlatformDB database
     class Redis,CallQueue,NotifQueue,DataQueue,AuditQueue,AnalyticsQueue queue
-    class Auth0,Email,SMS external
+    class Auth0,Email external
 ```
 
 ## Core Services
@@ -128,7 +122,7 @@ graph TB
 
 _PHI: Protected Health Information_
 
-_PII: Personally Indentifiable Information_
+_PII: Personally Identifiable Information_
 
 ## Service Communication
 
@@ -189,12 +183,12 @@ DELETE /roles/:id               # Delete role (admin)
 #### Members
 
 ```
-GET    /api/v1/members          # List members (with pagination)
-POST   /api/v1/members          # Create member
-GET    /api/v1/members/:id      # Get member details
-PUT    /api/v1/members/:id      # Update member
-DELETE /api/v1/members/:id      # Delete member (soft delete)
-GET    /api/v1/members/:id/calls # Get member call history
+GET    /api/v1/members                  # List members (with pagination)
+POST   /api/v1/members                  # Create member
+GET    /api/v1/members/:id              # Get member details
+PUT    /api/v1/members/:id              # Update member
+DELETE /api/v1/members/:id              # Delete member (soft delete)
+GET    /api/v1/members/:id/calls        # Get member call history
 ```
 
 #### Specialists
@@ -272,11 +266,18 @@ GET    /api/risk/trends         # Risk trend analysis
 GET    /api/risk/reports        # Risk reports
 ```
 
+## Current Services
+
+The platform includes these core services:
+
+- **svc-identity**: Authentication and authorization
+- **svc-platform**: Core business logic and data management
+- **svc-notifications**: Email notification service
+
 ## Future Services
 
 Additional services may be added as the platform grows:
 
-- Notification service
 - Analytics service
 - File storage service
 - Integration service

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The platform includes multiple frontend applications to serve different user types and use cases.
+The platform ships two applications: a web-based Admin portal for internal operations and an API Gateway that fronts all backend services.
 
 ## Current Applications
 
@@ -10,37 +10,38 @@ The platform includes multiple frontend applications to serve different user typ
 
 - **Technology**: React with Vite
 - **Purpose**: Administrative interface for platform management
-- **Users**: Internal staff, administrators
-- **Features**: User management, system configuration, analytics
+- **Users**: Outreach Specialists
+- **Features**: User management, system configuration, analytics, outreach workflows (CSV import, queues, risk review)
 
-## Future Applications
+### API Gateway
 
-### Member Web (Planned)
-
-- **Technology**: React with Vite
-- **Purpose**: Member-facing web interface
-- **Users**: Insurance members
-- **Features**: Account management, communication
-
-### Mobile (Planned)
-
-- **Technology**: React Native
-- **Purpose**: Mobile application for members
-- **Users**: Insurance members
-- **Features**: Mobile-optimized member experience
+- **Technology**: NestJS (Node.js)
+- **Purpose**: Single entry point for clients; request routing, auth, rate limiting, response aggregation
+- **Users**: Admin Web, automated integrations
+- **Features**: Authentication (JWT), RBAC enforcement, request validation, observability, circuit breaking
 
 ## Development Approach
 
 - Shared component library for consistent UI/UX
-- Independent deployment pipelines
-- Responsive design for all web applications
-- Cross-platform compatibility for mobile app
+- Independent deployment pipelines (gateway and admin web deploy separately)
+- Monorepo-managed with Nx (affected-based builds, caching)
+- Feature flags for iterative rollout of Admin Web features
+- Security by default: CSP headers, dependency scanning, and SAST in CI
 
 ## Technology Stack
 
+### Admin Web
+
 - **Frontend Framework**: React 18+
 - **Build Tool**: Vite
-- **Mobile Framework**: React Native
 - **State Management**: Redux Toolkit or similar
 - **Styling**: Tailwind CSS
 - **Testing**: Vitest or Jest
+
+### API Gateway
+
+- **Framework**: NestJS (Express adapter)
+- **Validation**: class-validator / Zod
+- **Auth**: JWT (user), API tokens (M2M)
+- **Observability**: Winston, Papertrail
+- **Testing**: Jest or Vitest

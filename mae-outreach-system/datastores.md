@@ -93,13 +93,8 @@ erDiagram
     SPECIALISTS {
         uuid id PK
         uuid user_id FK
-        varchar first_name
-        varchar last_name
-        varchar email UK
         varchar phone
         varchar license_number
-        jsonb specialties
-        jsonb availability_schedule
         boolean is_active
         timestamp deleted_at
         timestamp created_at
@@ -161,10 +156,6 @@ erDiagram
         uuid id PK
         uuid specialist_id FK
         uuid insurance_plan_id FK
-        varchar expertise_level
-        date certification_date
-        date certification_expiry
-        boolean is_active
         text notes
         timestamp deleted_at
         timestamp created_at
@@ -178,18 +169,7 @@ erDiagram
         uuid specialist_id FK
         varchar risk_type
         varchar severity
-        varchar title
         text description
-        jsonb risk_details
-        varchar status
-        text resolution_notes
-        uuid resolved_by FK
-        timestamp resolved_at
-        varchar escalated_to
-        timestamp escalated_at
-        boolean follow_up_required
-        date follow_up_date
-        text follow_up_notes
         timestamp deleted_at
         timestamp created_at
         timestamp updated_at
@@ -418,10 +398,6 @@ CREATE TABLE specialist_insurance_plans (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   specialist_id UUID REFERENCES specialists(id) NOT NULL,
   insurance_plan_id UUID REFERENCES insurance_plans(id) NOT NULL,
-  expertise_level VARCHAR(20) DEFAULT 'intermediate', -- 'beginner', 'intermediate', 'advanced', 'expert'
-  certification_date DATE,
-  certification_expiry DATE,
-  is_active BOOLEAN DEFAULT true,
   notes TEXT,
   deleted_at TIMESTAMP,
   created_at TIMESTAMP DEFAULT NOW(),

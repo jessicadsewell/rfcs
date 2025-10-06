@@ -10,12 +10,11 @@ The insurance outreach platform uses Nx to manage multiple applications, service
 insurance-outreach/
 ├── apps/                              # UI and edge apps
 │   ├── admin-web/                     # Admin React app
-│   ├── member-web/                    # Member portal (future)
 │   └── api-gateway/                   # API Gateway (Nest)
 ├── services/                          # Backend microservices (Nest)
 │   ├── svc-identity/                  # Authentication & authorization
 │   ├── svc-platform/                  # Members, specialists, calls, risk
-│   └── svc-notifications/             # Email/SMS/web push (future)
+│   └── svc-notifications/             # Email notifications
 ├── libs/                              # Shared libraries
 │   ├── shared/                        # Shared utilities and types
 │   ├── ui/                            # Shared UI components

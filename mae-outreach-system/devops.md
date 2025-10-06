@@ -45,26 +45,6 @@ Comprehensive monitoring, logging, and observability strategy for the insurance 
   - Log search and filtering
   - Alerting on log patterns
 
-### Log Management
-
-```javascript
-// Example Winston configuration
-{
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.json()
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new PapertrailTransport({
-      host: 'logs.papertrailapp.com',
-      port: 12345
-    })
-  ]
-}
-```
-
 ## Observability Stack
 
 ### Metrics Collection

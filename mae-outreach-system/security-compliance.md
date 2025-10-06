@@ -6,8 +6,6 @@ The insurance outreach platform must comply with HIPAA (Health Insurance Portabi
 
 ## HIPAA Compliance Requirements
 
-### Administrative Safeguards
-
 ### Technical Safeguards
 
 - **Access Control**: Unique user identification and automatic logoff

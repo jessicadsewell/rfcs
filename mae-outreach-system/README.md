@@ -2,13 +2,13 @@
 
 ## Overview
 
-This RFC outlines the architecture and implementation plan for an insurance outreach platform. The system is designed as a microservices-based architecture with separate frontend applications, API gateway, and backend services.
+This RFC outlines the architecture and implementation plan for an insurance outreach platform. The system is designed as a microservices-based architecture with a single frontend Admin application, API gateway, and backend services.
 
 ## Architecture Summary
 
 The platform consists of:
 
-- **Frontend Applications**: Admin web interface and future member web/mobile apps
+- **Frontend Applications**: Admin web interface
 - **API Gateway**: Centralized entry point with JWT authentication
 - **Microservices**: Identity service and platform service for core business logic
 - **Datastores**: PostgreSQL databases with TypeORM and soft deletes
@@ -30,7 +30,7 @@ The platform consists of:
 
 ## Key Technologies
 
-- **Frontend**: React, Vite, React Native
+- **Frontend**: React, Vite
 - **Backend**: NestJS
 - **Database**: PostgreSQL, TypeORM
 - **Authentication**: JWT, Auth0 (external identity provider)

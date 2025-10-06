@@ -4,14 +4,12 @@
 
 The platform uses NestJS's built-in queue system with Bull/BullMQ for background job processing. This enables asynchronous processing of time-consuming tasks without blocking API responses.
 
-For implementation details, see the [NestJS Queues documentation](https://docs.nestjs.com/techniques/queues).
-
 ## Queue Architecture
 
 ### Queue Types
 
 - **Call Processing Queue**: Handle call scheduling, reminders, and follow-ups
-- **Notification Queue**: Send emails, SMS, and push notifications
+- **Notification Queue**: Send emails
 - **Data Processing Queue**: Bulk operations, data imports, and exports
 - **Audit Queue**: Process audit logs and compliance reporting
 - **Analytics Queue**: Generate reports and analytics data
@@ -33,12 +31,10 @@ For implementation details, see the [NestJS Queues documentation](https://docs.n
 ### Notification Jobs
 
 - **Send Email**: Template-based email notifications
-- **Send SMS**: Text message notifications
-- **Send Push Notification**: Mobile app notifications
 
 ### Data Processing Jobs
 
-- **Bulk Import Members**: Process member data imports from CSV w/ validation
+- **Bulk Import Members**: Process member data imports from CSV via `/api/bulk/members` endpoint
 
 ## Queue Configuration
 
