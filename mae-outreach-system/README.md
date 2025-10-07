@@ -1,4 +1,4 @@
-# Insurance Outreach Platform RFC
+# Insurance Outreach & Risk Management System RFC
 
 ## Overview
 
