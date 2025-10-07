@@ -6,19 +6,20 @@ The platform uses NestJS's built-in queue system with Bull/BullMQ for background
 
 ## Queue Architecture
 
-### Queue Types
-
-- **Call Processing Queue**: Handle call scheduling, reminders, and follow-ups
-- **Notification Queue**: Send emails
-- **Data Processing Queue**: Bulk operations, data imports, and exports
-- **Audit Queue**: Process audit logs and compliance reporting
-- **Analytics Queue**: Generate reports and analytics data
+| Queue Type          | Purpose                                        |
+| ------------------- | ---------------------------------------------- |
+| **Call Processing** | Manages call scheduling, reminders, follow-ups |
+| **Notification**    | Sends emails and other notifications           |
+| **Data Processing** | Handles bulk operations, imports, exports      |
+| **Audit**           | Processes audit logs and compliance reports    |
+| **Analytics**       | Generates reports and analytics data           |
 
 ## Job Types
 
 ### Call Processing Jobs
 
 - **Schedule Call**: Create and schedule member calls
+
 - **Automated Follow-up**: Send an email if after seven days no contact with member
 
 ### Notification Jobs
