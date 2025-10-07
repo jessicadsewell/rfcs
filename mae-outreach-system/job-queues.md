@@ -14,13 +14,6 @@ The platform uses NestJS's built-in queue system with Bull/BullMQ for background
 - **Audit Queue**: Process audit logs and compliance reporting
 - **Analytics Queue**: Generate reports and analytics data
 
-### Implementation Pattern
-
-- Use `@Processor()` decorator for queue handlers
-- Use `@Process()` decorator for specific job types
-- Use `@InjectQueue()` for dependency injection
-- Follow NestJS queue patterns and best practices
-
 ## Job Types
 
 ### Call Processing Jobs

@@ -40,7 +40,6 @@ Infrastructure design for deployment, scaling, and continuous integration/deploy
 
 - **Application Load Balancer**: Distribute traffic across instances
 - **Health Checks**: Automatic removal of unhealthy instances
-- **Session Affinity**: Where required for stateful operations
 
 ## CI/CD Pipeline
 
@@ -75,7 +74,6 @@ Infrastructure design for deployment, scaling, and continuous integration/deploy
 
 - **Kubernetes**: Container orchestration (future consideration)
 - **Docker Compose**: Local development environment
-- **Service Mesh**: Inter-service communication (future)
 
 ## Security
 
@@ -84,16 +82,12 @@ Infrastructure design for deployment, scaling, and continuous integration/deploy
 - **VPC**: Isolated network environments
 - **Firewall Rules**: Restrictive access policies
 - **SSL/TLS**: Encrypted communications (TLS 1.3 for PHI)
-- **Network Segmentation**: Separate networks for PHI vs. non-PHI systems
-- **VPN Access**: Secure remote access for authorized personnel
 
 ### Access Control
 
 - **IAM**: Role-based access control
 - **Service Accounts**: Limited-privilege service access
-- **Secrets Management**: Secure credential storage
 - **HIPAA Compliance**: Multi-factor authentication, audit logging
-- **PHI Access**: Just-in-time access for PHI handling
 
 ## Monitoring & Maintenance
 

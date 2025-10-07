@@ -39,21 +39,18 @@ The insurance outreach platform must comply with HIPAA (Health Insurance Portabi
 
 - **At Rest**: AES-256 encryption for all databases and file storage
 - **In Transit**: TLS 1.3 for all API communications
-- **Key Management**: Hardware Security Modules (HSMs) or cloud KMS
 
 ### Access Controls
 
 - **Authentication**: Multi-factor authentication (MFA) required
 - **Authorization**: Role-based access control (RBAC)
 - **Session Management**: Automatic timeout and secure session handling
-- **Privileged Access**: Just-in-time access for administrative functions
 
 ### Audit Logging
 
 - **Comprehensive Logging**: All PHI access and modifications
 - **Log Integrity**: Tamper-proof log storage
 - **Retention**: Minimum 6-year retention for audit logs
-- **Monitoring**: Real-time monitoring of suspicious activities
 
 ## Data Handling Procedures
 
@@ -67,19 +64,3 @@ The insurance outreach platform must comply with HIPAA (Health Insurance Portabi
 
 - **De-identification**: Remove or mask identifying information
 - **Aggregation**: Use aggregated data for analytics
-- **Pseudonymization**: Replace identifiers with pseudonyms
-
-### Breach Response
-
-- **Detection**: Automated monitoring for potential breaches
-- **Assessment**: Risk assessment within 24 hours
-- **Notification**: Required notifications to HHS and affected individuals
-- **Documentation**: Complete incident documentation
-
-## Compliance Monitoring
-
-### Metrics & Reporting
-
-- **Security Metrics**: Failed login attempts, PHI access patterns
-- **Compliance Reports**: Monthly compliance status reports
-- **Incident Metrics**: Security incident tracking and trends

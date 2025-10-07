@@ -461,8 +461,7 @@ CREATE TABLE audit_logs (
 ### Database
 
 - **Primary**: PostgreSQL
-- **Version**: 13+ (recommended)
-- **Features**: JSON support, full-text search, ACID compliance
+- **Features**: JSON support, full-text search
 
 ### ORM & Migrations
 
@@ -485,13 +484,10 @@ CREATE TABLE audit_logs (
 
 - Automated daily backups
 - Point-in-time recovery
-- Cross-region backup replication
 
 ### Data Consistency
 
-- Eventual consistency between services
-- Event-driven updates for cross-service data
-- Transaction boundaries within services
+- Eventual consistency between services and vendors
 
 ## Performance Considerations
 
@@ -501,38 +497,19 @@ CREATE TABLE audit_logs (
 - Composite indexes for complex queries
 - Regular index maintenance and optimization
 
-### Connection Pooling
-
-- Connection pool management
-- Connection limits per service
-- Connection health monitoring
-
-### Scaling
-
-- Read replicas for read-heavy workloads
-- Horizontal partitioning for large tables
-- Database sharding if needed
-
 ## Security
 
 ### Access Control
 
 - Service-specific database users
-- Principle of least privilege
-- Encrypted connections (SSL/TLS)
-- Multi-factor authentication for database access
 
 ### Data Protection
 
 - **Encryption at Rest**: AES-256 encryption for all databases
-- **PHI Encryption**: Additional encryption layer for Protected Health Information
-- **Key Management**: Hardware Security Modules (HSMs) or cloud KMS
 - **Audit Logging**: Comprehensive logging of all PHI access and modifications
 
 ### HIPAA Compliance
 
-- **Data Classification**: Separate handling for PHI vs. non-PHI data
 - **Access Logging**: All PHI access must be logged with user context
 - **Data Minimization**: Store only necessary PHI data
 - **Retention Policies**: Automatic deletion after HIPAA retention periods
-- **Backup Encryption**: Encrypted backups with secure key management

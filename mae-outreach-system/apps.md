@@ -18,15 +18,14 @@ The platform ships two applications: a web-based Admin portal for internal opera
 - **Technology**: NestJS (Node.js)
 - **Purpose**: Single entry point for clients; request routing, auth, rate limiting, response aggregation
 - **Users**: Admin Web, automated integrations
-- **Features**: Authentication (JWT), RBAC enforcement, request validation, observability, circuit breaking
+- **Features**: Authentication (JWT), RBAC enforcement, observability
 
 ## Development Approach
 
 - Shared component library for consistent UI/UX
 - Independent deployment pipelines (gateway and admin web deploy separately)
 - Monorepo-managed with Nx (affected-based builds, caching)
-- Feature flags for iterative rollout of Admin Web features
-- Security by default: CSP headers, dependency scanning, and SAST in CI
+- Feature flags for iterative rollout of Admin Web features (launchdarkly)
 
 ## Technology Stack
 
@@ -44,4 +43,4 @@ The platform ships two applications: a web-based Admin portal for internal opera
 - **Validation**: class-validator / Zod
 - **Auth**: JWT (user), API tokens (M2M)
 - **Observability**: Winston, Papertrail
-- **Testing**: Jest or Vitest
+- **Testing**: Vitest or Jest

@@ -104,8 +104,6 @@ graph TB
 
 **Technology**: NestJS
 
-**Domain**: Members, specialists, call records, insurance plans, metadata
-
 **API Structure**:
 
 - **CRUD Endpoints**: `api.meetmae.com/api/v1/*`
@@ -130,7 +128,7 @@ _PII: Personally Identifiable Information_
 - **Authentication**: JWT tokens for user requests, API tokens for service-to-service
 - **Data Format**: JSON
 - **Error Handling**: Standardized error responses
-- **PHI Handling**: Encrypted transmission of Protected Health Information
+- **PHI Handling**: Encrypted transmission of PHI
 - **Audit Logging**: All PHI access logged with user context and timestamp
 
 ## Service Endpoints

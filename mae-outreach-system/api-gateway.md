@@ -9,14 +9,12 @@ The API Gateway serves as the central entry point for all client applications, h
 ### Authentication & Authorization
 
 - JWT token verification via `svc-identity`
-- Request validation and sanitization
 - Rate limiting and throttling
 - CORS handling
 
 ### Routing
 
 - Route requests to appropriate microservices
-- Load balancing across service instances
 - Request/response transformation
 - API versioning
 
@@ -92,19 +90,14 @@ flowchart TD
 
 - JWT token validation
 - Request rate limiting
-- Input validation and sanitization
 - CORS configuration
-- Security headers
 
 ## Performance Considerations
 
-- Connection pooling
 - Response caching where appropriate
-- Request compression
 - Timeout handling
 
 ## Technology Options
 
 - **NestJS**: Consistent with backend services
-- **Kong**: Enterprise API gateway
-- **AWS API Gateway**: Managed service option
+- **GCP API Gateway**: Enterprise API gateway
